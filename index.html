@@ -2583,116 +2583,136 @@
 
     <script>
 
-        const telefono = "5492617692594";
+    const telefono = "5492617692594";
 
 
-        function abrirWhatsApp() {
+    // =========================================
+    // WHATSAPP GENERAL
+    // =========================================
 
-            const mensaje =
-                "Hola Click Auto MDZ. Quiero consultar por la venta de mi vehículo.";
-
-            const url =
-                "https://wa.me/" +
-                telefono +
-                "?text=" +
-                encodeURIComponent(mensaje);
-
-            window.open(url, "_blank");
-
-        }
-
-
-        function consultarPeugeot() {
-
-            const mensaje =
-                "Hola Click Auto MDZ. Estoy interesado en el Peugeot 308 Allure NAV 2015. Quiero recibir más información.";
-
-            const url =
-                "https://wa.me/" +
-                telefono +
-                "?text=" +
-                encodeURIComponent(mensaje);
-
-            window.open(url, "_blank");
-
-        }
-document
-    .getElementById("vehicleForm")
-    .addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const nombre =
-            document.getElementById("nombre").value;
-
-        const whatsapp =
-            document.getElementById("whatsapp").value;
-
-        const marca =
-            document.getElementById("marca").value;
-
-        const modelo =
-            document.getElementById("modelo").value;
-
-        const anio =
-            document.getElementById("anio").value;
-
-        const kilometros =
-            document.getElementById("kilometros").value;
-
-        const precio =
-            document.getElementById("precio").value;
-
-        const comentarios =
-            document.getElementById("comentarios").value;
-
+    function abrirWhatsApp() {
 
         const mensaje =
-            "Hola Click Auto MDZ.%0A%0A" +
-
-            "Quiero solicitar una evaluación para vender mi vehículo.%0A%0A" +
-
-            "Nombre: " + nombre + "%0A" +
-
-            "WhatsApp: " + whatsapp + "%0A" +
-
-            "Marca: " + marca + "%0A" +
-
-            "Modelo: " + modelo + "%0A" +
-
-            "Año: " + anio + "%0A" +
-
-            "Kilometraje: " + kilometros + " km%0A" +
-
-            "Precio pretendido: " + precio + "%0A%0A" +
-
-            "Información adicional: " + comentarios;
-
+            "Hola Click Auto MDZ. Quiero consultar por la venta de mi vehículo.";
 
         const url =
             "https://wa.me/" +
             telefono +
             "?text=" +
-            mensaje;
-
+            encodeURIComponent(mensaje);
 
         window.open(url, "_blank");
-function consultarFinanciacion() {
+    }
 
-    const mensaje =
-        "Hola Click Auto MDZ. Quiero consultar por financiación para la compra de un vehículo. Me gustaría conocer las alternativas disponibles.";
 
-    const url =
-        "https://wa.me/" +
-        telefono +
-        "?text=" +
-        encodeURIComponent(mensaje);
+    // =========================================
+    // CONSULTA PEUGEOT 308
+    // =========================================
 
-    window.open(url, "_blank");
+    function consultarPeugeot() {
 
-}
-    });
-    </script>
+        const mensaje =
+            "Hola Click Auto MDZ. Estoy interesado en el Peugeot 308 Allure NAV 2015. Quiero recibir más información.";
+
+        const url =
+            "https://wa.me/" +
+            telefono +
+            "?text=" +
+            encodeURIComponent(mensaje);
+
+        window.open(url, "_blank");
+    }
+
+
+    // =========================================
+    // CONSULTA FINANCIACIÓN
+    // =========================================
+
+    function consultarFinanciacion() {
+
+        const mensaje =
+            "Hola Click Auto MDZ. Quiero consultar por financiación para la compra de un vehículo. Me gustaría conocer las alternativas disponibles.";
+
+        const url =
+            "https://wa.me/" +
+            telefono +
+            "?text=" +
+            encodeURIComponent(mensaje);
+
+        window.open(url, "_blank");
+    }
+
+
+    // =========================================
+    // FORMULARIO VENTA DE VEHÍCULO
+    // =========================================
+
+    document
+        .getElementById("vehicleForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const nombre =
+                document.getElementById("nombre").value.trim();
+
+            const whatsapp =
+                document.getElementById("whatsapp").value.trim();
+
+            const marca =
+                document.getElementById("marca").value.trim();
+
+            const modelo =
+                document.getElementById("modelo").value.trim();
+
+            const anio =
+                document.getElementById("anio").value.trim();
+
+            const kilometros =
+                document.getElementById("kilometros").value.trim();
+
+            const precio =
+                document.getElementById("precio").value.trim();
+
+            const comentarios =
+                document.getElementById("comentarios").value.trim();
+
+
+            const mensaje =
+                "Hola Click Auto MDZ.\n\n" +
+
+                "Quiero solicitar una evaluación para vender mi vehículo.\n\n" +
+
+                "Nombre: " + nombre + "\n" +
+
+                "WhatsApp: " + whatsapp + "\n" +
+
+                "Marca: " + marca + "\n" +
+
+                "Modelo: " + modelo + "\n" +
+
+                "Año: " + anio + "\n" +
+
+                "Kilometraje: " + kilometros + " km\n" +
+
+                "Precio pretendido: " + precio + "\n\n" +
+
+                "Información adicional: " + comentarios;
+
+
+            const url =
+                "https://wa.me/" +
+                telefono +
+                "?text=" +
+                encodeURIComponent(mensaje);
+
+
+            window.open(url, "_blank");
+
+        });
+
+</script>
 
 
 </body>
