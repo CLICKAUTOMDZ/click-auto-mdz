@@ -742,7 +742,134 @@
             font-weight: bold;
         }
 
+/* =========================================
+   FINANCIACIÓN
+========================================= */
 
+.financing {
+    background: #f4f4f4;
+    color: #111;
+}
+
+
+.financing-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.financing-card {
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    padding: 32px 22px;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    transition: .3s;
+}
+
+
+.financing-card:hover {
+    border-color: var(--rojo);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+
+.financing-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: var(--rojo);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+.financing-card h3 {
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+
+.financing-card p {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.financing-cta {
+    max-width: 1150px;
+
+    margin: 30px auto 0;
+
+    padding: 28px 30px;
+
+    background: #111;
+
+    color: #fff;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.financing-cta h3 {
+    font-size: 18px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 7px;
+}
+
+
+.financing-cta p {
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+.financing-cta .btn {
+    flex-shrink: 0;
+}
         /* =========================================
            CTA ROJO
         ========================================= */
@@ -1305,17 +1432,19 @@
 
         <nav>
 
-            <a href="#inicio">Inicio</a>
+           <a href="#inicio">Inicio</a>
 
-            <a href="#vehiculos">Vehículos</a>
+<a href="#vehiculos">Vehículos</a>
 
-            <a href="#proceso">Cómo funciona</a>
+<a href="#financiacion">Financiación</a>
 
-            <a href="#vende">Vendé tu vehículo</a>
+<a href="#proceso">Cómo funciona</a>
 
-            <a href="#nosotros">Nosotros</a>
+<a href="#vende">Vendé tu vehículo</a>
 
-            <a href="#faq">Preguntas frecuentes</a>
+<a href="#nosotros">Nosotros</a>
+
+<a href="#faq">Preguntas frecuentes</a>
 
         </nav>
 
@@ -1905,7 +2034,137 @@
     </section>
 
 
+    <!-- =========================================
+         FINANCIACIÓN
+    ========================================= -->
 
+    <section class="section financing" id="financiacion">
+
+        <div class="section-title">
+
+            <div class="section-label">
+                Financiación
+            </div>
+
+            <h2>
+                Financiá tu próximo vehículo
+            </h2>
+
+            <p>
+                Te ayudamos a encontrar una alternativa de
+                financiación acorde al vehículo que querés comprar
+                y a tus posibilidades.
+            </p>
+
+        </div>
+
+
+        <div class="financing-grid">
+
+
+            <div class="financing-card">
+
+                <div class="financing-icon">
+                    $
+                </div>
+
+                <h3>
+                    Financiación de vehículos
+                </h3>
+
+                <p>
+                    Analizamos diferentes alternativas para ayudarte
+                    a encontrar una opción adecuada para tu operación.
+                </p>
+
+            </div>
+
+
+            <div class="financing-card">
+
+                <div class="financing-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Opciones según tu perfil
+                </h3>
+
+                <p>
+                    Evaluamos tu situación y las características
+                    de la operación antes de avanzar.
+                </p>
+
+            </div>
+
+
+            <div class="financing-card">
+
+                <div class="financing-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Gestión personalizada
+                </h3>
+
+                <p>
+                    Te acompañamos durante el proceso para que
+                    entiendas cada alternativa disponible.
+                </p>
+
+            </div>
+
+
+            <div class="financing-card">
+
+                <div class="financing-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Acompañamiento
+                </h3>
+
+                <p>
+                    Estamos presentes durante la operación para
+                    facilitar el proceso de compra.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="financing-cta">
+
+            <div>
+
+                <h3>
+                    ¿Querés saber cuánto podés financiar?
+                </h3>
+
+                <p>
+                    Contanos qué vehículo estás buscando y
+                    analizamos las alternativas disponibles.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="btn btn-red"
+                onclick="consultarFinanciacion(); return false;">
+
+                Consultar financiación →
+
+            </a>
+
+        </div>
+
+    </section>
     <!-- =========================================
          CTA
     ========================================= -->
@@ -2418,7 +2677,20 @@ document
 
 
         window.open(url, "_blank");
+function consultarFinanciacion() {
 
+    const mensaje =
+        "Hola Click Auto MDZ. Quiero consultar por financiación para la compra de un vehículo. Me gustaría conocer las alternativas disponibles.";
+
+    const url =
+        "https://wa.me/" +
+        telefono +
+        "?text=" +
+        encodeURIComponent(mensaje);
+
+    window.open(url, "_blank");
+
+}
     });
     </script>
 
